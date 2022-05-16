@@ -1,5 +1,10 @@
-import React from 'react';
+import { applyMiddleware, combineReducers, legacy_createStore as createStore } from 'redux';
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
+// import rocketReducer from './rockets/rockets';
+import missionReducer from './missions/missions';
 
-const configureStore = () => <div>configureStore</div>;
+const rootReducer = combineReducers({ missionReducer });
+const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 
-export default configureStore;
+export default store;
