@@ -4,7 +4,7 @@ import logo from './assets/images/planet.png';
 
 const Layout = () => (
   <>
-    <nav className="container border d-flex align-items-center justify-content-between p-3">
+    <nav className="container border-bottom border-3 d-flex align-items-center justify-content-between p-3">
       <div className="d-flex align-items-center justify-content-start">
         <img src={logo} alt="planet" className="logo" />
         <h1 className="ms-3">Space Traveler&apos;s Hub</h1>
