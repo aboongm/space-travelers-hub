@@ -21,7 +21,9 @@ export const fetchRocketApiAction = () => async (dispatch) => {
   const rockets = await axios.get(url);
   const rocketFetch = Object.entries(rockets.data).map((rocket) => {
     const images = rocket[1].flickr_images[0];
-    const { id, rocket_name: name, description, reserved = false } = rocket[1];
+    const {
+      id, rocket_name: name, description, reserved = false,
+    } = rocket[1];
     return {
       id,
       images,
