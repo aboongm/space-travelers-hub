@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getMissions } from '../redux/missions/missions';
+import { getMissionAction } from '../redux/missions/missions';
 import { fetchRocketApiAction } from '../redux/rockets/rockets';
 
 const MyProfile = () => {
@@ -10,7 +10,7 @@ const MyProfile = () => {
 
   useEffect(() => {
     if (missions.length === 0) {
-      dispatch(getMissions());
+      dispatch(getMissionAction());
     }
     if (rocketList.length === 0) {
       dispatch(fetchRocketApiAction);
