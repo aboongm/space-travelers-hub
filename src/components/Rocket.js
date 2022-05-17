@@ -8,7 +8,7 @@ const Rocket = ({ rocket }) => {
   return (
     <>
       <div className="pt-3 container d-flex align-items-start justify-content-between">
-        <img src={images} alt="rockets" width="260px" />
+        <img src={images} alt="rockets" width="280px" />
         <div className="px-3 m-0 d-flex flex-column align-items-start justify-content-start">
           <h4 className="m-0 p-1" key={id}>
             {name}

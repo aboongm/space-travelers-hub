@@ -13,11 +13,13 @@ const Rockets = () => {
 
   return (
     <>
-      {rocketList.length ? (
-        rocketList.map((rocket) => <Rocket rocket={rocket} key={rocket.id} />)
-      ) : (
-        <h3>No rocket to display</h3>
-      )}
+      <div className="pb-5">
+        {rocketList.length ? (
+          rocketList.map((rocket) => <Rocket rocket={rocket} key={rocket.id} />)
+        ) : (
+          <h3>No rocket to display</h3>
+        )}
+      </div>
     </>
   );
 };
