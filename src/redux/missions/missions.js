@@ -8,7 +8,7 @@ const LEAVE_MISSION = 'LEAVE_MISSION';
 
 const initialState = [];
 
-export const fetchMissionApiAction = (data) => {
+export const fetchMissionsApiction = (data) => {
   const missions = data.map((mission) => ({
     id: mission.mission_id,
     name: mission.mission_name,
@@ -21,24 +21,24 @@ export const fetchMissionApiAction = (data) => {
   };
 };
 
-export const joiningMissionAction = (id) => ({
+export const joinMissionAction = (id) => ({
   type: JOIN_MISSION,
   payload: id,
 });
 
-export const leavingMissionAction = (id) => ({
+export const leaveMissionAction = (id) => ({
   type: LEAVE_MISSION,
   payload: id,
 });
 
-export const getMissions = () => async (dispatch) => {
+export const getMissionsAction = () => async (dispatch) => {
   await axios({
     method: 'get',
     url: MISSIONS_URL,
     responseType: 'json',
   })
     .then((res) => {
-      dispatch(fetchMissionApiAction(res.data));
+      dispatch(fetchMissionsApiction(res.data));
     });
 };
 
