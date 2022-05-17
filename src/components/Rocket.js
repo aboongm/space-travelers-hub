@@ -19,10 +19,28 @@ const Rocket = ({ rocket }) => {
           <h4 className="m-0 p-1" key={id}>
             {name}
           </h4>
-          <p className="mx-0 mb-2 p-1 lh-sm">{description}</p>
-          <button type="button" onClick={reserveCancelRocket} className="btn1">
-            {reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
-          </button>
+          <p className="mx-0 mb-2 p-1 lh-sm">
+            {reserved && <span className="badge">Reserved</span>}
+            {' '}
+            {description}
+          </p>
+          {reserved ? (
+            <button
+              type="button"
+              onClick={reserveCancelRocket}
+              className="btn2"
+            >
+              Cancel Reservation
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={reserveCancelRocket}
+              className="btn1"
+            >
+              Reserve Rocket
+            </button>
+          )}
         </div>
       </div>
     </>
