@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getMissions, joiningMissionAction, leavingMissionAction } from '../redux/missions/missions';
+import { getMissionAction, joinMissionAction, leaveMissionAction } from '../redux/missions/missions';
 
 const Mission = () => {
   const dispatch = useDispatch();
@@ -8,7 +8,7 @@ const Mission = () => {
 
   useEffect(() => {
     if (missions.length === 0) {
-      dispatch(getMissions());
+      dispatch(getMissionAction());
     }
   }, []);
 
@@ -46,7 +46,7 @@ const Mission = () => {
               {!msn.reserved
                 ? (
                   <button
-                    onClick={() => dispatch(joiningMissionAction(msn.id))}
+                    onClick={() => dispatch(joinMissionAction(msn.id))}
                     type="button"
                     className="py-2 border-success rounded text-center"
                     style={{ minWidth: '100px' }}
@@ -55,7 +55,7 @@ const Mission = () => {
                   </button>
                 ) : (
                   <button
-                    onClick={() => dispatch(leavingMissionAction(msn.id))}
+                    onClick={() => dispatch(leaveMissionAction(msn.id))}
                     type="button"
                     className="py-2 border border-danger rounded text-danger text-center"
                     style={{ minWidth: '100px' }}

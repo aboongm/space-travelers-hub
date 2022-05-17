@@ -21,17 +21,17 @@ export const fetchMissionApiAction = (data) => {
   };
 };
 
-export const joiningMissionAction = (id) => ({
+export const joinMissionAction = (id) => ({
   type: JOIN_MISSION,
   payload: id,
 });
 
-export const leavingMissionAction = (id) => ({
+export const leaveMissionAction = (id) => ({
   type: LEAVE_MISSION,
   payload: id,
 });
 
-export const getMissions = () => async (dispatch) => {
+export const getMissionAction = () => async (dispatch) => {
   await axios({
     method: 'get',
     url: MISSIONS_URL,
