@@ -7,11 +7,13 @@ const Rocket = ({ rocket }) => {
   } = rocket;
   return (
     <>
-      <div className="container d-flex align-items-center justify-content-between">
-        <img src={images} alt="rockets" width="240px" />
-        <div className="p-3 d-flex flex-column align-items-start justify-content-center">
-          <h3 key={id}>{name}</h3>
-          <p>{description}</p>
+      <div className="pt-3 container d-flex align-items-start justify-content-between">
+        <img src={images} alt="rockets" width="260px" />
+        <div className="px-3 m-0 d-flex flex-column align-items-start justify-content-start">
+          <h4 className="m-0 p-1" key={id}>
+            {name}
+          </h4>
+          <p className="mx-0 mb-2 p-1 lh-sm">{description}</p>
           <button type="button" className="btn1">
             Reserve Rocket
           </button>
