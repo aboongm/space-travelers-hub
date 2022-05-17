@@ -13,7 +13,7 @@ describe('Test for Rockets', () => {
         <HashRouter>
           <Rockets />
         </HashRouter>
-      </Provider>
+      </Provider>,
     );
     expect(rockets).toMatchSnapshot();
   });
