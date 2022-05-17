@@ -1,59 +1,71 @@
 import axios from 'axios';
 
-// constants
-const RESERVE_MISSION = 'spaceTravelerHub/rockets/RESERVE_MISSION';
-const FETCH_MISSION = 'spaceTravelerHub/rockets/FETCH_MISSION';
-const url = 'https://api.spacexdata.com/v3/missions';
+const BASE_URL = 'https://api.spacexdata.com/v3/';
+const MISSIONS_URL = `${BASE_URL}missions`;
+const GET_MISSIONS = 'GET_MISSIONS';
+const JOIN_MISSION = 'JOIN_MISSION';
+const LEAVE_MISSION = 'LEAVE_MISSION';
+
 const initialState = [];
 
-// action creators
-export const reserveMissionAction = (payload) => ({
-  type: RESERVE_MISSION,
-  payload,
-});
-
-const fetchMissionAction = (payload) => ({
-  type: FETCH_MISSION,
-  payload,
-});
-
-export const fetchMissionApiAction = () => async (dispatch) => {
-  const missions = await axios.get(url);
-  const missionFetch = Object.entries(missions.data).map((mission) => {
-    const {
-      mission_id: id, mission_name: name, description, reserved = false,
-    } = mission[1];
-    return {
-      id,
-      name,
-      description,
-      reserved,
-    };
-  });
-
-  dispatch(fetchMissionAction(missionFetch));
+export const fetchMissionApiAction = (data) => {
+  const missions = data.map((mission) => ({
+    id: mission.mission_id,
+    name: mission.mission_name,
+    description: mission.description,
+    reserved: false,
+  }));
+  return {
+    type: GET_MISSIONS,
+    payload: missions,
+  };
 };
 
-const bookMission = (state, payload) => {
-  const nextState = state.map((mission) => {
-    console.log('mission id: ', mission.id);
-    console.log('payload: ', payload);
-    if (mission.id !== payload) return mission;
-    return { ...mission, reserved: !mission.reserved };
-  });
-  return nextState;
+export const joiningMissionAction = (id) => ({
+  type: JOIN_MISSION,
+  payload: id,
+});
+
+export const leavingMissionAction = (id) => ({
+  type: LEAVE_MISSION,
+  payload: id,
+});
+
+export const getMissions = () => async (dispatch) => {
+  await axios({
+    method: 'get',
+    url: MISSIONS_URL,
+    responseType: 'json',
+  })
+    .then((res) => {
+      dispatch(fetchMissionApiAction(res.data));
+    });
 };
 
-// reducer
-const missionReducer = (state = initialState, action) => {
+const missionsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case RESERVE_MISSION:
-      return bookMission(state, action.payload);
-    case FETCH_MISSION:
-      return action.payload;
+    case GET_MISSIONS:
+      return [...action.payload];
+
+    case JOIN_MISSION: {
+      const newState = state.map((mission) => {
+        if (mission.id !== action.payload) { return mission; }
+        return { ...mission, reserved: true };
+      });
+      return newState;
+    }
+
+    case LEAVE_MISSION: {
+      const newState = state.map((mission) => {
+        if (mission.id !== action.payload) { return mission; }
+        return { ...mission, reserved: false };
+      });
+      return newState;
+    }
+
     default:
       return state;
   }
 };
 
-export default missionReducer;
+export default missionsReducer;
