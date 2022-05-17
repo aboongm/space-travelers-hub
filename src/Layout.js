@@ -9,7 +9,7 @@ const Layout = () => (
         <img src={logo} alt="planet" className="logo" />
         <h1 className="ms-3">Space Traveler&apos;s Hub</h1>
       </div>
-      <ul className="d-flex align-items-center justify-content-around">
+      <ul className="my-0 d-flex align-items-center justify-content-around">
         <li className="px-3">
           <NavLink to="/" className="active">
             Rockets

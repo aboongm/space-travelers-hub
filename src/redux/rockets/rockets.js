@@ -1,17 +1,11 @@
 import axios from 'axios';
 
 // constants
-const RESERVE_ROCKET = 'spaceTravelerHub/rockets/RESERVE_ROCKET';
 const FETCH_ROCKET = 'spaceTravelerHub/rockets/FETCH_ROCKET';
 const url = 'https://api.spacexdata.com/v3/rockets';
 const initialState = [];
 
 // action creators
-export const reserveRocketAction = (payload) => ({
-  type: RESERVE_ROCKET,
-  payload,
-});
-
 const fetchRocketAction = (payload) => ({
   type: FETCH_ROCKET,
   payload,
@@ -36,21 +30,9 @@ export const fetchRocketApiAction = () => async (dispatch) => {
   dispatch(fetchRocketAction(rocketFetch));
 };
 
-const bookRocket = (state, payload) => {
-  const nextState = state.map((rocket) => {
-    console.log('rocket id: ', rocket.id);
-    console.log('payload: ', payload);
-    if (rocket.id !== payload) return rocket;
-    return { ...rocket, reserved: !rocket.reserved };
-  });
-  return nextState;
-};
-
 // reducer
 const rocketReducer = (state = initialState, action) => {
   switch (action.type) {
-    case RESERVE_ROCKET:
-      return bookRocket(state, action.payload);
     case FETCH_ROCKET:
       return action.payload;
     default:
