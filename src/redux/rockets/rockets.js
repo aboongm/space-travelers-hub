@@ -24,6 +24,7 @@ export const fetchRocketApiAction = () => async (dispatch) => {
     const {
       id, rocket_name: name, description, reserved = false,
     } = rocket[1];
+
     return {
       id,
       images,

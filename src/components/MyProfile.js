@@ -6,20 +6,16 @@ import { fetchRocketApiAction } from '../redux/rockets/rockets';
 const MyProfile = () => {
   const dispatch = useDispatch();
   const missions = useSelector((state) => state.missions);
-  const rockets = useSelector((state) => state.rocketReducer);
+  const rocketList = useSelector((state) => state.rocketReducer);
 
   useEffect(() => {
     if (missions.length === 0) {
       dispatch(getMissions());
     }
-    if (rockets.length === 0) {
+    if (rocketList.length === 0) {
       dispatch(fetchRocketApiAction);
     }
   }, []);
-
-  const rocketList = useSelector((state) => state.rocketReducer);
-  const myRocket = rocketList.filter((rocket) => rocket.reserved);
-  console.log('profile', myRocket);
 
   return (
     <div className="container">
@@ -39,15 +35,19 @@ const MyProfile = () => {
 
         <div className="col">
           <h3 className="mb-3">My Rockets</h3>
-          {myRocket.length ? (
-            myRocket.map((rocket) => (
-              <p className="border m-0 p-3" key={rocket.id}>
-                {rocket.name}
-              </p>
-            ))
-          ) : (
-            <p>No rocket to display</p>
-          )}
+          <ul>
+            {rocketList.length ? (
+              rocketList
+                .filter((rocket) => rocket.reserved === true)
+                .map((frocket) => (
+                  <li className="border m-0 p-3" key={frocket.id}>
+                    {frocket.name}
+                  </li>
+                ))
+            ) : (
+              <li>No rocket to display</li>
+            )}
+          </ul>
         </div>
       </div>
     </div>
