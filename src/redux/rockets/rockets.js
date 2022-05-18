@@ -12,7 +12,7 @@ export const reserveRocketAction = (payload) => ({
   payload,
 });
 
-const fetchRocketAction = (payload) => ({
+export const fetchRocketAction = (payload) => ({
   type: FETCH_ROCKET,
   payload,
 });
