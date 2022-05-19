@@ -1,6 +1,6 @@
 # React Project: Space Traveler's Hub
 
-This is a Space Traveler's Hub website. The website has 3 pages that lists rockets, missions, and the reserved rockets and booked missions.
+This is a Space Traveler's Hub website. The website has 3 pages that list the rockets, the missions, and the reserved rockets and booked missions.
 
 # Screen Shots
 ![rockets](https://user-images.githubusercontent.com/49184579/169244577-7b5dcf7b-0609-43d5-acda-2a3905d8aaac.png)
