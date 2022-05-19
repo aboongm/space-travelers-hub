@@ -1,16 +1,13 @@
 # React Project: Space Traveler's Hub
 
-This is a Space Traveler's Hub.
+This is a Space Traveler's Hub. The website has 3 pages that list rockets, missions, and the reserved rockets and booked missions.
 
 # Screen Shots
+![Rockets](https://user-images.githubusercontent.com/49184579/169241965-683ffe2a-252f-4298-89da-2ea12d3ee5cd.png)
 
-## Desktop
+![Missions](https://user-images.githubusercontent.com/49184579/169241993-5d463582-24e8-46fe-b9e3-f02ee79a7498.png)
 
-coming ...
-
-## Mobile
-
-coming ...
+![my profile](https://user-images.githubusercontent.com/49184579/169242013-db301aae-46de-4714-a6c3-861f4c928200.png)
 
 ## Built With &hearts;
 
@@ -44,15 +41,16 @@ to test or run the application double click on the `index.html` file to open in 
 
 👤 **Ranjit Luwang**
 
-- GitHub: _[@aboongm](https://github.com/aboongm)_
-- Twitter: _[@John_luang1](https://twitter.com/John_luang1)_
-- LinkedIn: _[LinkedIn](https://www.linkedin.com/in/mayengbam-ranjit-luwang-31962418/)_
+- GitHub: [@aboongm](https://github.com/aboongm)
+- Twitter: [@John_luang1](https://twitter.com/John_luang1)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/mayengbam-ranjit-luwang-31962418/)
 
 👤 **Said Rasinlic**
 
-- GitHub: _[@aboongm](https://github.com/aboongm)_
-- Twitter: _[@John_luang1](https://twitter.com/John_luang1)_
-- LinkedIn: _[LinkedIn](https://www.linkedin.com/in/mayengbam-ranjit-luwang-31962418/)_
+- GitHub: [@GitHub/SaidRasinlic](https://github.com/SaidRasinlic)
+- Twitter: [@Twitter/SaidRasinlic](https://twitter.com/SaidRasinlic)
+- LinkedIn: [LinkedIn/SaidRasinlic](https://www.linkedin.com/in/saidrasinlic)
+- 
 
 ## 🤝 Contributing
 
