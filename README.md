@@ -22,6 +22,8 @@ This is a Space Traveler's Hub. The website has 3 pages that list rockets, missi
 
 [Github-page live](https://aboongm.github.io/space-travelers-hub/)
 
+[Netlify live](https://aboongm-space-travelers-hub.netlify.app/)
+
 ### Prerequisites
 
 - Good knowledge on javascript objects
