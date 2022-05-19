@@ -3,11 +3,13 @@
 This is a Space Traveler's Hub. The website has 3 pages that list rockets, missions, and the reserved rockets and booked missions.
 
 # Screen Shots
-![Rockets](https://user-images.githubusercontent.com/49184579/169241965-683ffe2a-252f-4298-89da-2ea12d3ee5cd.png)
+![rockets](https://user-images.githubusercontent.com/49184579/169244577-7b5dcf7b-0609-43d5-acda-2a3905d8aaac.png)
 
-![Missions](https://user-images.githubusercontent.com/49184579/169241993-5d463582-24e8-46fe-b9e3-f02ee79a7498.png)
+![missions](https://user-images.githubusercontent.com/49184579/169244592-69622ecd-1164-4416-a619-f817ca6fe29e.png)
 
-![my profile](https://user-images.githubusercontent.com/49184579/169242013-db301aae-46de-4714-a6c3-861f4c928200.png)
+![my-profile](https://user-images.githubusercontent.com/49184579/169244603-bcad628c-a8d1-4cad-991e-6248c079a80f.png)
+
+
 
 ## Built With &hearts;
 
