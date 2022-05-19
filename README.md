@@ -50,7 +50,6 @@ to test or run the application double click on the `index.html` file to open in 
 - GitHub: [@GitHub/SaidRasinlic](https://github.com/SaidRasinlic)
 - Twitter: [@Twitter/SaidRasinlic](https://twitter.com/SaidRasinlic)
 - LinkedIn: [LinkedIn/SaidRasinlic](https://www.linkedin.com/in/saidrasinlic)
-- 
 
 ## 🤝 Contributing
 
